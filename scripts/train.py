@@ -41,12 +41,10 @@ def train(args):
                   shuffle=args.shuffle, balance_frac=args.balance_frac)
 
     if args.name is not None and args.logdir is not None and args.resume is None:
-        model = Model(in_features=4,
+        model = Model(in_features=8,
                       planar_features=args.planar_feats,
                       nexus_features=args.nexus_feats,
-                      vertex_aggr=args.vertex_aggr,
-                      vertex_lstm_features=args.vertex_lstm_feats,
-                      vertex_mlp_features=args.vertex_mlp_feats,
+                      vertex_features=args.vertex_feats,
                       planes=nudata.planes,
                       semantic_classes=nudata.semantic_classes,
                       event_classes=nudata.event_classes,
